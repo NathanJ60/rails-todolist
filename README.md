@@ -1,24 +1,49 @@
-# README
+# Rails To-Do List
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Un petit projet ultra simple pour tester Ruby on Rails.
 
-Things you may want to cover:
+## C'est quoi ?
 
-* Ruby version
+Juste une to-do list basique pour découvrir Rails et comprendre :
+- Le pattern MVC (Model-View-Controller)
+- Le système de routes REST
+- Les migrations et Active Record
+- Les validations
+- L'architecture avec un Service Layer
 
-* System dependencies
+Rien de fou, c'est volontairement minimaliste.
 
-* Configuration
+## Stack
 
-* Database creation
+- Ruby 3.3
+- Rails 8.1
+- SQLite
 
-* Database initialization
+## Lancer le projet
 
-* How to run the test suite
+```bash
+# Installer les dépendances
+bundle install
 
-* Services (job queues, cache servers, search engines, etc.)
+# Créer la base de données
+rails db:migrate
 
-* Deployment instructions
+# Lancer le serveur
+rails server
+```
 
-* ...
+Puis ouvrir http://localhost:3000
+
+## Structure
+
+```
+app/
+├── controllers/tasks_controller.rb  # CRUD + toggle
+├── models/task.rb                   # Validations
+├── services/task_service.rb         # Logique métier
+└── views/tasks/                     # Interface
+```
+
+## Pourquoi ce projet ?
+
+Premier contact avec Rails. Rien de plus.
