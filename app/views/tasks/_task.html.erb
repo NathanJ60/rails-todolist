@@ -1,0 +1,18 @@
+<div id="<%= dom_id task %>" style="padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px; <%= 'opacity: 0.6;' if task.done? %>">
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <div>
+      <strong style="<%= 'text-decoration: line-through;' if task.done? %>">
+        <%= task.done? ? "OK" : "En cours" %> - <%= task.title %>
+      </strong>
+      <% if task.description.present? %>
+        <p style="margin: 5px 0; color: #666;"><%= task.description %></p>
+      <% end %>
+    </div>
+
+    <div>
+      <%= button_to toggle_task_path(task), method: :post, style: "padding: 5px 10px; cursor: pointer;" do %>
+        <%= task.done? ? "Remettre en cours" : "Terminer" %>
+      <% end %>
+    </div>
+  </div>
+</div>
